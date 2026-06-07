@@ -2,6 +2,14 @@
 
 `scripts/contribute.sh` detects whichever phase is open and contributes to it. The steps below are the same either way.
 
+## One contributor at a time
+
+Contributions are sequential: each builds on the one before, and PRs merge in arrival order, strict FIFO. Only the PR at the front of the line merges cleanly. Anything built on the same head behind it lands on a stale parent and has to be redone.
+
+Check the Pull Requests tab before you start. If a contribution PR is already open, it merges before yours, so wait for it to land and build on the new head. Starting now just means redoing the work once it merges. If the open PR looks stuck (CI red, quiet for a while), open an issue instead of racing it.
+
+If a PR merges while you are already mid-contribution, see [What if another PR merges first?](#what-if-another-pr-merges-first) below.
+
 ## Prerequisites
 
 Docker is the recommended path (it pins `snarkjs 0.7.6`). Native install instead: `node >= 20`, `snarkjs 0.7.6`, `bash`, `jq`, `sha256sum`.
